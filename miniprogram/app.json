@@ -1,0 +1,28 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/terms/terms",
+    "pages/me/me"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#EFEBE2",
+    "navigationBarTitleText": "廿四·候",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#EFEBE2",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#A39C8B",
+    "selectedColor": "#C47A3A",
+    "backgroundColor": "#F6F3EC",
+    "borderStyle": "white",
+    "list": [
+      { "pagePath": "pages/home/home", "text": "今日" },
+      { "pagePath": "pages/terms/terms", "text": "廿四节气" },
+      { "pagePath": "pages/me/me", "text": "我的" }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

@@ -1,0 +1,9 @@
+<view class="mask {{visible ? 'show' : ''}}" bindtap="onClose"></view>
+<view class="sheet {{visible ? 'show' : ''}}">
+  <view class="grip"></view>
+  <text class="sh-ord">{{term.name}} · {{ordinalText}}</text>
+  <view class="sh-name serif">{{pentad.name}}</view>
+  <view class="sh-exp">{{pentad.explanation}}</view>
+  <view class="sh-img">物候意象：{{pentad.imagery}}</view>
+  <view class="sh-src">出处：《月令七十二候集解》</view>
+</view>

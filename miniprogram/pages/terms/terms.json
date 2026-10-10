@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "廿四节气",
+  "usingComponents": {
+    "pentad-sheet": "/components/pentad-sheet/index"
+  }
+}

@@ -1,0 +1,67 @@
+<view class="page-container {{ctx.theme || 'theme-summer'}}">
+  <view class="home" wx:if="{{ctx}}">
+
+    <view class="season">{{ctx.seasonText}} · {{ctx.termIndexText}}</view>
+    <view class="term serif" bindtap="openSheet">{{ctx.term.name}}</view>
+    <view class="huang">太阳黄经 {{ctx.term.eclipticLong}}°</view>
+
+    <view class="pentad" bindtap="openSheet">
+      <text class="p-ord">{{ctx.ordinalText}}</text>
+      <text class="p-name serif">{{ctx.pentad.name}}</text>
+      <text class="p-tip">点看释义</text>
+    </view>
+
+    <!-- AI 意境图（有图显示图，无图降级为材质底色+节气名） -->
+    <view class="art">
+      <image wx:if="{{ctx.image}}" class="art-img" src="{{ctx.image}}" mode="aspectFill" />
+      <view wx:else class="art-fallback">
+        <view class="art-sun"></view>
+        <view class="art-mount m1"></view>
+        <view class="art-mount m2"></view>
+        <view class="art-mount m3"></view>
+        <text class="art-term serif">{{ctx.term.name}}</text>
+      </view>
+      <text class="ai-badge">AI 意境图</text>
+    </view>
+
+    <!-- 今日絮语 -->
+    <view class="verse">
+      <view class="bar"></view>
+      <view class="txt serif">{{ctx.verse}}</view>
+      <view class="label">今 日 絮 语</view>
+    </view>
+
+    <!-- 倒计时 -->
+    <view class="cd-wrap">
+      <view class="cd-label">距「{{ctx.nextTerm.name}}」还有</view>
+      <view class="cd">
+        <text class="n">{{ctx.countdown.days}}</text><text class="u">天</text>
+        <text class="n">{{cdH}}</text><text class="u">时</text>
+        <text class="n">{{cdM}}</text><text class="u">分</text>
+        <text class="n">{{cdS}}</text><text class="u">秒</text>
+      </view>
+    </view>
+
+    <!-- 双按钮 -->
+    <view class="actions">
+      <button class="btn-primary" bindtap="openShare">生成分享图</button>
+      <button class="btn-ghost" bindtap="onSubscribe">提醒我下个节气</button>
+    </view>
+
+    <view class="foot-note">珍惜当下 · 一年四季很快会过去</view>
+  </view>
+
+  <!-- 加载骨架屏 -->
+  <view class="skeleton" wx:else>
+    <view class="sk-line sk-title"></view>
+    <view class="sk-line"></view>
+    <view class="sk-art"></view>
+    <view class="sk-line sk-short"></view>
+  </view>
+
+  <!-- 候释义 Bottom Sheet -->
+  <pentad-sheet wx:if="{{sheetVisible}}" term="{{ctx.term}}" pentad="{{ctx.pentad}}" ordinalText="{{ctx.ordinalText}}" visible="{{sheetVisible}}" bindclose="closeSheet" />
+
+  <!-- 分享图生成弹层 -->
+  <share-poster wx:if="{{shareVisible}}" visible="{{shareVisible}}" ctx="{{ctx}}" bindclose="closeShare" />
+</view>

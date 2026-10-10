@@ -1,0 +1,101 @@
+/**
+ * 廿四·候 · 全局样式
+ * 四季材质主题（PRD 4.8 定稿）：
+ *   春 D素绢柳芽绿 / 夏 A宣纸米 / 秋 C陶土 / 冬 B青瓷
+ * 页面根节点挂 .theme-* 类即可获得整套配色变量。
+ */
+
+page {
+  font-family: 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+  background-color: #EFEBE2;
+  font-size: 28rpx;
+  color: #2B2A26;
+}
+
+/* ---------- 主题变量 ---------- */
+.theme-spring {
+  --paper: #E4EADB; --paper-2: #EFF2E7;
+  --ink: #2E3327; --ink-soft: #55594B; --ink-fade: #7C8070; --ink-faint: #98A08C;
+  --accent: #7BA05B; --accent-d: #5E8343; --jade: #6E7A6A;
+  --line: rgba(70, 90, 50, 0.12);
+  --art-a: #F2F4EA; --art-b: #E2E6D5;
+}
+.theme-summer {
+  --paper: #EFEBE2; --paper-2: #F6F3EC;
+  --ink: #2B2A26; --ink-soft: #5C574C; --ink-fade: #8A8577; --ink-faint: #A39C8B;
+  --accent: #C47A3A; --accent-d: #B4442E; --jade: #6E7A6A;
+  --line: rgba(80, 75, 60, 0.12);
+  --art-a: #F3EFE6; --art-b: #E7DFCF;
+}
+.theme-autumn {
+  --paper: #EDE3D8; --paper-2: #F4EDE4;
+  --ink: #33291F; --ink-soft: #5E5142; --ink-fade: #8C7E6C; --ink-faint: #A8998A;
+  --accent: #9B5E4A; --accent-d: #7E4636; --jade: #7A6E5F;
+  --line: rgba(90, 70, 50, 0.12);
+  --art-a: #F4ECE2; --art-b: #E4D7C8;
+}
+.theme-winter {
+  --paper: #DCE2DA; --paper-2: #E7ECE6;
+  --ink: #26302A; --ink-soft: #4A574F; --ink-fade: #74807A; --ink-faint: #90A098;
+  --accent: #5B7F6E; --accent-d: #43685A; --jade: #5B7F6E;
+  --line: rgba(60, 80, 70, 0.12);
+  --art-a: #E9EEE9; --art-b: #D8DFD9;
+}
+
+/* ---------- 通用工具类 ---------- */
+.serif {
+  font-family: 'Songti SC', 'STSong', serif;
+}
+
+.page-container {
+  min-height: 100vh;
+  background: var(--paper);
+  box-sizing: border-box;
+}
+
+/* 材质底纹（宣纸纤维感，纯 CSS 近似） */
+.page-container::before {
+  content: '';
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  z-index: 0;
+  background-image: repeating-linear-gradient(
+    48deg,
+    var(--line) 0 1rpx,
+    transparent 1rpx 10rpx
+  );
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.55);
+  border: 1rpx solid var(--line);
+  border-radius: 32rpx;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+  border-radius: 28rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  letter-spacing: 4rpx;
+  box-shadow: 0 20rpx 44rpx -20rpx var(--accent);
+}
+
+.btn-primary::after { border: none; }
+.btn-primary:active { transform: scale(0.96); }
+
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--ink);
+  border: 1rpx solid var(--line);
+  border-radius: 28rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  letter-spacing: 4rpx;
+}
+
+.btn-ghost::after { border: none; }
+.btn-ghost:active { transform: scale(0.96); }

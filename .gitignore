@@ -1,0 +1,17 @@
+.DS_Store
+node_modules/
+*.log
+
+# 本地私有配置（云环境 ID）
+miniprogram/config.js
+
+# 设计稿 / 原型 / 过程文档（本地保留，不入库）
+demo_*.html
+demo_*.png
+preview_miniapp.html
+style_*.html
+style_*.png
+style_Demo/
+廿四候_MVP_PRD_V1.0.md
+二十四节气项目方案.md
+节气产品-用户旅程与信息架构.html

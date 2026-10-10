@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "廿四·候",
+  "usingComponents": {
+    "pentad-sheet": "/components/pentad-sheet/index",
+    "share-poster": "/components/share-poster/index"
+  }
+}

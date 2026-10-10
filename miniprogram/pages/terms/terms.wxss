@@ -1,0 +1,102 @@
+.terms {
+  position: relative;
+  z-index: 10;
+  padding: 0 52rpx 48rpx;
+}
+
+.view-head { padding-top: 36rpx; text-align: center; margin-bottom: 36rpx; }
+.view-head .big { font-size: 44rpx; letter-spacing: 12rpx; color: var(--ink); }
+.view-head .sub { font-size: 22rpx; color: var(--ink-faint); letter-spacing: 4rpx; margin-top: 10rpx; }
+
+/* ---- 七十二候时间轴 ---- */
+.timeline-wrap { margin-bottom: 48rpx; }
+.tl-title { font-size: 24rpx; color: var(--ink-fade); letter-spacing: 4rpx; margin-bottom: 24rpx; }
+.timeline { width: 100%; white-space: nowrap; }
+.tl-inner { display: inline-flex; padding: 48rpx 8rpx 16rpx; }
+
+.tl-node {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width: 112rpx;
+}
+.tl-line {
+  position: absolute;
+  top: 26rpx;
+  left: 50%;
+  width: 112rpx;
+  height: 4rpx;
+  background: var(--line);
+}
+.tl-node:last-child .tl-line { display: none; }
+.tl-dot {
+  width: 28rpx;
+  height: 28rpx;
+  border-radius: 50%;
+  background: #CBBFA8;
+  position: relative;
+  z-index: 2;
+  transition: all 0.2s;
+}
+.tl-node.cur .tl-dot {
+  width: 40rpx;
+  height: 40rpx;
+  background: var(--accent);
+  box-shadow: 0 0 0 10rpx rgba(196, 122, 58, 0.18);
+}
+.tl-nm {
+  font-size: 20rpx;
+  color: var(--ink-soft);
+  margin-top: 16rpx;
+  letter-spacing: 2rpx;
+  writing-mode: vertical-rl;
+  height: 112rpx;
+  text-align: center;
+}
+.tl-node.cur .tl-nm { color: var(--accent); font-weight: 700; }
+
+/* ---- 四季网格 ---- */
+.grid-title { font-size: 24rpx; color: var(--ink-fade); letter-spacing: 4rpx; margin-bottom: 24rpx; }
+
+.season-block { margin-bottom: 36rpx; }
+.sh {
+  font-size: 28rpx;
+  letter-spacing: 8rpx;
+  color: var(--ink);
+  margin-bottom: 20rpx;
+  padding-left: 16rpx;
+  border-left: 6rpx solid var(--accent);
+}
+
+.term-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16rpx; }
+.term-cell {
+  background: rgba(255, 255, 255, 0.5);
+  border: 1rpx solid var(--line);
+  border-radius: 20rpx;
+  padding: 24rpx 8rpx;
+  text-align: center;
+  transition: transform 0.15s ease;
+}
+.term-cell:active { transform: scale(0.95); }
+.term-cell.now { background: var(--accent); border-color: var(--accent); }
+.term-cell.now .tn, .term-cell.now .td { color: #fff; }
+.tn { font-size: 32rpx; letter-spacing: 4rpx; color: var(--ink); }
+.td { font-size: 18rpx; color: var(--ink-faint); margin-top: 6rpx; }
+.now-tag {
+  font-size: 16rpx;
+  background: #fff;
+  color: var(--accent);
+  border-radius: 12rpx;
+  padding: 2rpx 10rpx;
+  margin-top: 8rpx;
+  display: inline-block;
+}
+
+.grid-note {
+  font-size: 20rpx;
+  color: var(--ink-faint);
+  text-align: center;
+  letter-spacing: 2rpx;
+  margin-top: 24rpx;
+}

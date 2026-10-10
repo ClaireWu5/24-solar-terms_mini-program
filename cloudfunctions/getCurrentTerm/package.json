@@ -1,0 +1,10 @@
+{
+  "name": "getCurrentTerm",
+  "version": "1.0.0",
+  "description": "廿四·候 · 节气实时计算云函数（lunar-javascript 天文算法）",
+  "main": "index.js",
+  "dependencies": {
+    "wx-server-sdk": "~2.6.3",
+    "lunar-javascript": "^1.7.3"
+  }
+}

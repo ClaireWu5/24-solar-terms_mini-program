@@ -1,0 +1,55 @@
+<view class="page-container {{ctx.theme || 'theme-summer'}}">
+  <view class="me">
+
+    <view class="view-head">
+      <view class="big serif">我 的</view>
+    </view>
+
+    <!-- 品牌卡片 -->
+    <view class="me-card card">
+      <view class="me-hd">
+        <view class="me-logo serif">廿四</view>
+        <view>
+          <view class="t serif">廿四·候</view>
+          <view class="s">每天一眼节气，给日子一点仪式感</view>
+        </view>
+      </view>
+    </view>
+
+    <!-- 列表 -->
+    <view class="me-list card">
+      <!-- 非遗介绍（折叠展开） -->
+      <view class="me-item {{heritageOpen ? 'on' : ''}}" bindtap="toggleHeritage">
+        <view class="l">
+          <text class="ic">◇</text>
+          <text>关于二十四节气 · 人类非遗</text>
+        </view>
+        <view class="arr">{{heritageOpen ? '⌄' : '›'}}</view>
+      </view>
+
+      <view class="heritage-box" wx:if="{{heritageOpen}}">
+        <view class="heritage">
+          <view class="h3 serif">{{heritage.full.title}}</view>
+          <view class="lead">{{heritage.full.lead}}</view>
+          <view class="htl">
+            <view class="htl-item" wx:for="{{heritage.full.timeline}}" wx:key="year">
+              <view class="y">{{item.year}}</view>
+              <view class="d">{{item.event}}</view>
+            </view>
+          </view>
+          <view class="end serif">{{heritage.full.ending}}</view>
+        </view>
+      </view>
+
+      <view class="me-item" bindtap="showAbout">
+        <view class="l">
+          <text class="ic">叶</text>
+          <text>关于「廿四·候」</text>
+        </view>
+        <view class="arr">›</view>
+      </view>
+    </view>
+
+    <view class="disclaimer">养生内容为传统民俗科普，不作为医疗建议</view>
+  </view>
+</view>

@@ -1,0 +1,32 @@
+<view class="share-mask {{visible ? 'show' : ''}}">
+  <view class="share-card">
+    <view class="sc-art">
+      <image wx:if="{{ctx.image}}" class="sc-img" src="{{ctx.image}}" mode="aspectFill" />
+      <canvas wx:else type="2d" id="posterCanvas" class="sc-canvas"></canvas>
+    </view>
+    <view class="sc-body">
+      <view class="sc-term serif">{{ctx.term.name}}</view>
+      <view class="sc-pentad">{{ctx.ordinalText}} · {{ctx.pentad.name}}</view>
+      <view class="sc-verse serif">{{ctx.verse}}</view>
+      <view class="sc-div"></view>
+      <view class="sc-heritage">{{heritageShort}}</view>
+    </view>
+    <view class="sc-foot">
+      <view class="brand serif">廿四·候</view>
+      <view class="sc-qr"></view>
+    </view>
+  </view>
+
+  <view class="share-ops">
+    <view class="share-op" bindtap="onSave">
+      <view class="c">存</view>
+      <view class="t">保存图片</view>
+    </view>
+    <button class="share-op share-btn" open-type="share">
+      <view class="c">享</view>
+      <view class="t">发给朋友</view>
+    </button>
+  </view>
+
+  <view class="share-close" bindtap="onClose">关 闭</view>
+</view>

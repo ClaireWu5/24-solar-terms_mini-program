@@ -1,0 +1,54 @@
+<view class="page-container {{ctx.theme || 'theme-summer'}}">
+  <view class="terms">
+
+    <view class="view-head">
+      <view class="big serif">廿 四 节 气</view>
+      <view class="sub">七十二候 · 一年流转</view>
+    </view>
+
+    <!-- 七十二候时间轴（横向滑动） -->
+    <view class="timeline-wrap">
+      <view class="tl-title">七十二候时间轴（左右滑动）</view>
+      <scroll-view class="timeline" scroll-x enhanced show-scrollbar="{{false}}" scroll-into-view="{{scrollInto}}">
+        <view class="tl-inner">
+          <view
+            wx:for="{{pentads}}"
+            wx:key="id"
+            id="node-{{item.id}}"
+            class="tl-node {{item.id === currentPentadId ? 'cur' : ''}}"
+            data-item="{{item}}"
+            bindtap="onPentadTap"
+          >
+            <view class="tl-line"></view>
+            <view class="tl-dot"></view>
+            <view class="tl-nm">{{item.name}}</view>
+          </view>
+        </view>
+      </scroll-view>
+    </view>
+
+    <!-- 按四季浏览 -->
+    <view class="grid-title">按四季浏览</view>
+    <view class="season-block" wx:for="{{seasonGroups}}" wx:key="season" wx:for-item="group">
+      <view class="sh serif">{{group.season}}</view>
+      <view class="term-grid">
+        <view
+          wx:for="{{group.terms}}"
+          wx:key="id"
+          class="term-cell {{item.id === currentTermId ? 'now' : ''}}"
+          data-item="{{item}}"
+          bindtap="onTermTap"
+        >
+          <view class="tn serif">{{item.name}}</view>
+          <view class="td">{{item.eclipticLong}}°</view>
+          <view class="now-tag" wx:if="{{item.id === currentTermId}}">今日</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="grid-note">节气详情卡（物候/农事/养生/民俗/诗词）规划中 · P2</view>
+  </view>
+
+  <!-- 候释义复用 Bottom Sheet -->
+  <pentad-sheet visible="{{sheetVisible}}" term="{{sheetTerm}}" pentad="{{sheetPentad}}" ordinalText="{{sheetOrdinal}}" bindclose="closeSheet" />
+</view>

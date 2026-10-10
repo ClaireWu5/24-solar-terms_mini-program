@@ -1,0 +1,70 @@
+.mask {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(30, 25, 18, 0.42);
+  z-index: 50;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.mask.show { opacity: 1; pointer-events: auto; }
+
+.sheet {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 55;
+  background: #F6F3EC;
+  border-radius: 48rpx 48rpx 0 0;
+  padding: 20rpx 52rpx 68rpx;
+  transform: translateY(100%);
+  transition: transform 0.34s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 -28rpx 80rpx -20rpx rgba(40, 30, 15, 0.3);
+}
+.sheet.show { transform: translateY(0); }
+
+.grip {
+  width: 76rpx; height: 8rpx;
+  border-radius: 4rpx;
+  background: rgba(80, 75, 60, 0.12);
+  margin: 0 auto 36rpx;
+}
+
+.sh-ord {
+  display: inline-block;
+  font-size: 22rpx;
+  color: #fff;
+  background: #C47A3A;
+  border-radius: 16rpx;
+  padding: 4rpx 18rpx;
+  letter-spacing: 2rpx;
+}
+
+.sh-name {
+  font-size: 52rpx;
+  letter-spacing: 8rpx;
+  margin: 28rpx 0 8rpx;
+  color: #2B2A26;
+}
+
+.sh-exp {
+  font-size: 28rpx;
+  line-height: 1.95;
+  color: #5C574C;
+  margin-top: 36rpx;
+}
+
+.sh-img {
+  font-size: 26rpx;
+  line-height: 1.9;
+  color: #8A8577;
+  margin-top: 28rpx;
+  padding-top: 28rpx;
+  border-top: 1rpx solid rgba(80, 75, 60, 0.12);
+}
+
+.sh-src {
+  font-size: 22rpx;
+  color: #A39C8B;
+  margin-top: 20rpx;
+  letter-spacing: 2rpx;
+}
